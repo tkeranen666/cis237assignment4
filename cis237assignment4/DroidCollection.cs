@@ -15,9 +15,27 @@ namespace cis237assignment4
         //Private variable to hold the length of the Collection
         private int lengthOfCollection;
 
+        //--------------------------------------------------------
+       // public void AddInitialDroids() // Add items to array for testing
+       // {
+          //  this.Add("Carbonite", "C3PO", "Gold", 500);
+            //droidCollection[0] = new AstromechDroid("Thermasteel", "R2 Unit", "Blue", true, true, true, true, 250);
+            //droidCollection[1] = new ProtocolDroid("Plasteel", "Custom-built Unit", "Gold", 6000000);
+            //droidCollection[2] = new AstromechDroid("Thermasteel", "R2 Unit", "Green", true, true, true, false, 50);
+            //droidCollection[3] = new ProtocolDroid("Plastoid Alloy", "HK Unit", "Rusty Orange", 400000);
+            //droidCollection[4] = new AstromechDroid("Plasteel", "T3 Unit", "Silver", false, true, true, false, 50);
+            //droidCollection[5] = new JanitorDroid("Plastoid Alloy", "V33 Unit", "Yellow", true, false, false, true, true);
+      //  }
+        //------------------------------------------------------------
+
         //Constructor that takes in the size of the collection.
         //It sets the size of the internal array that will be used.
         //It also sets the length of the collection to zero since nothing is added yet.
+
+        public DroidCollection() // Default constructor to allow the DroidCollection class to be called for sorting.
+        {
+        }
+
         public DroidCollection(int sizeOfCollection)
         {
             //Make new array for the collection
@@ -123,6 +141,25 @@ namespace cis237assignment4
 
             //return the completed string
             return returnString;
+        }
+
+        public void BucketSort()
+        {
+            GenericStack<string> myGenericStack = new GenericStack<string>();
+            int index = 0;
+
+            
+
+            for (GenericNode<string> x = myGenericStack.Head; x != null; x = x.Next)
+            {
+                Console.WriteLine(x.Data);
+            }
+
+        }
+
+        public void MergeSort()
+        {
+
         }
     }
 }

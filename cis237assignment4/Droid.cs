@@ -66,5 +66,14 @@ namespace cis237assignment4
                     "Model: " + this.model + Environment.NewLine +
                     "Color: " + this.color + Environment.NewLine;
         }
+
+        public virtual void CompareTo();
+       // private IComparable[] aux;
+       // public int CompareTo(Object obj)
+       // {
+           // if (obj )
+           // {
+           // }
+      //  }
     }
 }

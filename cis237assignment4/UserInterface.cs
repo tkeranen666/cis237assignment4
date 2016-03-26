@@ -23,6 +23,15 @@ namespace cis237assignment4
         {
             Console.WriteLine("Welcome to the Droid Inventory System");
             Console.WriteLine();
+
+            this.droidCollection.Add("Vanadium", "Protocal", "Gold", 500);
+            this.droidCollection.Add("Vanadium", "Utility", "Bronze", false, true, false);
+            this.droidCollection.Add("Carbonite", "Janitor", "Silver", false, false, true, false, true);
+            this.droidCollection.Add("Quadranium", "Astromech", "Silver", true, true, true, true, 15);
+            this.droidCollection.Add("Carbonite", "Astromech", "Gold", true, false, true, false, 15);
+            this.droidCollection.Add("Vanadium", "Utility", "Silver", true, true, false);
+            this.droidCollection.Add("Quadranium", "Janitor", "Silver", true, false, true, true, false);
+            this.droidCollection.Add("Quadranium", "Protocal", "Bronze", 500);
         }
 
         //Method to display the main menu
@@ -31,7 +40,9 @@ namespace cis237assignment4
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
-            Console.WriteLine("3. Exit the program");
+            Console.WriteLine("3. Sort droid list by model");
+            Console.WriteLine("4. Sort droid list by price");
+            Console.WriteLine("5. Exit the program");
         }
 
         //Method to get a menu choice
@@ -50,6 +61,7 @@ namespace cis237assignment4
             catch (Exception e)
             {
                 menuChoice = 0;
+                Console.WriteLine(e);
             }
 
             return menuChoice;
@@ -334,5 +346,28 @@ namespace cis237assignment4
             }
         }
 
+        //public void BucketSort()
+        //{
+        //    GenericStack<string> myGenericStack = new GenericStack<string>();
+
+        //    int i = 0;
+
+        //    while (droidCollection[i] != null)
+        //    {
+
+        //    }
+
+
+        //    for (GenericNode<string> x = myGenericStack.Head; x != null; x = x.Next)
+        //    {
+        //        Console.WriteLine(x.Data);
+        //    }
+
+        //}
+
+        //public void MergeSort()
+        //{
+
+        //}
     }
 }
