@@ -145,21 +145,49 @@ namespace cis237assignment4
 
         public void BucketSort()
         {
-            GenericStack<string> myGenericStack = new GenericStack<string>();
-            int index = 0;
+            GenericStack<IDroid> myGenericAstromechStack = new GenericStack<IDroid>();
+            GenericStack<IDroid> myGenericJanitorStack = new GenericStack<IDroid>();
+            GenericStack<IDroid> myGenericUtilityStack = new GenericStack<IDroid>();
+            GenericStack<IDroid> myGenericProtocolStack = new GenericStack<IDroid>();
+            //for (GenericNode<string> x = myGenericStack.Head; x != null; x = x.Next)
+            //{
+            //    Console.WriteLine(x.Data);
+            //}
 
-            
-
-            for (GenericNode<string> x = myGenericStack.Head; x != null; x = x.Next)
+            foreach (IDroid droid in this.droidCollection)
             {
-                Console.WriteLine(x.Data);
+                //string testString;
+                if (droid != null)
+                {
+                    if (droid is AstromechDroid)
+                    {
+                        myGenericAstromechStack.Add((AstromechDroid)droid);
+                    }
+                    else if (droid is JanitorDroid)
+                    {
+                        myGenericJanitorStack.Add((AstromechDroid)droid);
+                    }
+                    else if (droid is UtilityDroid)
+                    {
+                        myGenericUtilityStack.Add((AstromechDroid)droid);
+                    }
+                    else if (droid is ProtocolDroid)
+                    {
+                        myGenericProtocolStack.Add((ProtocolDroid)droid);
+                    }
+                }
+                else
+                {
+                    break;
+                }
             }
 
         }
 
         public void MergeSort()
         {
-
+            //MergeSort sortArray = new MergeSort();
+            //sortArray.sort(droidCollection);
         }
     }
 }

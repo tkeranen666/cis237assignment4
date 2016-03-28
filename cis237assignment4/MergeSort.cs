@@ -10,47 +10,53 @@ namespace cis237assignment4
     {
         private static IComparable[] aux;
 
-        public static void sort(IComparable[] a)
+        public void sort(IComparable[] tempArray)
         {
-            aux = new IComparable[a.Length];
-            sort(a, 0, a.Length - 1);
+            aux = new IComparable[tempArray.Length];
+            if (tempArray != null)
+            {
+                sort(tempArray, 0, tempArray.Length - 1);
+            }
+            else
+            {
+                Console.WriteLine("ERROR!");
+            }
         }
 
-        private static void sort(IComparable[] a, int lo, int hi)
+        private static void sort(IComparable[] tempArray, int lo, int hi)
         {
             if (hi <= lo) return;
             int mid = lo + (hi - lo) / 2;
-            sort(a, lo, mid);
-            sort(a, mid + 1, hi);
-            
+            sort(tempArray, lo, mid);
+            sort(tempArray, mid + 1, hi);
         }
 
-        public static void merge(IComparable[] a, int lo, int mid, int hi)
+        public static void merge(IComparable[] tempArray, int lo, int mid, int hi)
         {
             int i = lo;
             int j = mid + 1;
             for (int k = lo; k <= hi; k++)
             {
-                aux[k] = a[k];
+                aux[k] = tempArray[k];
             }
 
             for (int k = lo; k <= hi; k++)
             {
                 if (i > mid)
                 {
-                    a[k] = aux[j++];
+                    tempArray[k] = aux[j++];
                 }
                 else if (j > hi)
                 {
-                    a[k] = aux[i++];
+                    tempArray[k] = aux[i++];
                 }
                 else if (Convert.ToDecimal(aux[j]) < Convert.ToDecimal(aux[i]))
                 {
-                    a[k] = aux[j++];
+                    tempArray[k] = aux[j++];
                 }
                 else
                 {
-                    a[k] = aux[i++];
+                    tempArray[k] = aux[i++];
                 }
             }
         }
