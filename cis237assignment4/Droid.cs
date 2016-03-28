@@ -67,11 +67,11 @@ namespace cis237assignment4
                     "Color: " + this.color + Environment.NewLine;
         }
 
-        public decimal CompareTo()
-        {
-            //throw new NotImplementedException();
-            return totalCost.CompareTo(totalCost);
-        }
+        //public decimal CompareTo(object obj)
+        //{
+        //    //throw new NotImplementedException();
+        //    return totalCost.CompareTo(totalCost);
+        //}
        // private IComparable[] aux;
        // public int CompareTo(Object obj)
        // {

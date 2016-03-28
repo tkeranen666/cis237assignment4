@@ -149,14 +149,12 @@ namespace cis237assignment4
             GenericStack<IDroid> myGenericJanitorStack = new GenericStack<IDroid>();
             GenericStack<IDroid> myGenericUtilityStack = new GenericStack<IDroid>();
             GenericStack<IDroid> myGenericProtocolStack = new GenericStack<IDroid>();
-            //for (GenericNode<string> x = myGenericStack.Head; x != null; x = x.Next)
-            //{
-            //    Console.WriteLine(x.Data);
-            //}
 
-            foreach (IDroid droid in this.droidCollection)
+            GenericQueue<GenericNode<IDroid>> myGenericQueue = new GenericQueue<GenericNode<IDroid>>();
+
+
+            foreach (IDroid droid in droidCollection)
             {
-                //string testString;
                 if (droid != null)
                 {
                     if (droid is AstromechDroid)
@@ -182,6 +180,26 @@ namespace cis237assignment4
                 }
             }
 
+            for (GenericNode<IDroid> x = myGenericAstromechStack.Head; x != null; x = x.Next)
+            {
+                myGenericQueue.Add(x);
+                Console.WriteLine(x.Data);
+            }
+            for (GenericNode<IDroid> x = myGenericJanitorStack.Head; x != null; x = x.Next)
+            {
+                myGenericQueue.Add(x);
+                Console.WriteLine(x.Data);
+            }
+            for (GenericNode<IDroid> x = myGenericUtilityStack.Head; x != null; x = x.Next)
+            {
+                myGenericQueue.Add(x);
+                Console.WriteLine(x.Data);
+            }
+            for (GenericNode<IDroid> x = myGenericProtocolStack.Head; x != null; x = x.Next)
+            {
+                myGenericQueue.Add(x);
+                Console.WriteLine(x.Data);
+            }
         }
 
         public void MergeSort()
