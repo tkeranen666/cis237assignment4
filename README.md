@@ -2,7 +2,7 @@
 ## Due: 03-28-2016
 
 ## Author
-
+Timothy Keranen
 
 
 ## Description
@@ -70,7 +70,7 @@ Be sure to think about what the time complexity for the bucket sort will be. Thi
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
-
+Crashes at second iteration of Pop method.
 
 
 ## Assignment 3 Description for reference
