@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Tim Keranen
+// CIS 237 Assignment 4
+
 namespace cis237assignment4
 {
     class Program

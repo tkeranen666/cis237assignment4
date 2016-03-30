@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Tim Keranen
+
 namespace cis237assignment4
 {
     //Interface that I added to declare what methods MUST be implemeted in any class that implements this interface.
