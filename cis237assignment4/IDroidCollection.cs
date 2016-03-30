@@ -14,7 +14,13 @@ namespace cis237assignment4
         bool Add(string Material, string Model, string Color, bool HasToolBox, bool HasComputerConnection, bool HasArm);
         bool Add(string Material, string Model, string Color, bool HasToolBox, bool HasComputerConnection, bool HasArm, bool HasTrashCompactor, bool HasVaccum);
         bool Add(string Material, string Model, string Color, bool HasToolBox, bool HasComputerConnection, bool HasArm, bool HasFireExtinguisher, int NumberOfShips);
-        
+
+        // Call method for bucket sort in DroidCollection
+        void BucketSort();
+
+        // Call method for merge sort in DroidCollection
+        void MergeSort();
+
         //Method to get the data for a droid into a nicely formated string that can be output.
         string GetPrintString();
     }

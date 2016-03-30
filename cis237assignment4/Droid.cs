@@ -67,11 +67,16 @@ namespace cis237assignment4
                     "Color: " + this.color + Environment.NewLine;
         }
 
-        //public decimal CompareTo(object obj)
-        //{
-        //    //throw new NotImplementedException();
-        //    return totalCost.CompareTo(totalCost);
-        //}
+        public int CompareTo(object obj)
+        {
+            if (obj == null) return 1;
+
+            Droid otherTemperature = obj as Droid;
+            if (otherTemperature != null)
+                return this.TotalCost.CompareTo(otherTemperature.TotalCost);
+            else
+                throw new ArgumentException("Object is not the Total Cost");
+        }
        // private IComparable[] aux;
        // public int CompareTo(Object obj)
        // {

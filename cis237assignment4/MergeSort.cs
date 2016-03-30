@@ -10,12 +10,12 @@ namespace cis237assignment4
     {
         private static IComparable[] aux;
 
-        public void sort(IComparable[] tempArray)
+        public void sort(IComparable[] tempArray, int lengthOfCollection)
         {
             aux = new IComparable[tempArray.Length];
             if (tempArray != null)
             {
-                sort(tempArray, 0, tempArray.Length - 1);
+                sort(tempArray, 0, lengthOfCollection);
             }
             else
             {
@@ -29,6 +29,7 @@ namespace cis237assignment4
             int mid = lo + (hi - lo) / 2;
             sort(tempArray, lo, mid);
             sort(tempArray, mid + 1, hi);
+            merge(tempArray, lo, mid, hi);
         }
 
         public static void merge(IComparable[] tempArray, int lo, int mid, int hi)
@@ -50,7 +51,7 @@ namespace cis237assignment4
                 {
                     tempArray[k] = aux[i++];
                 }
-                else if (Convert.ToDecimal(aux[j]) < Convert.ToDecimal(aux[i]))
+                else if (aux[j].CompareTo(aux[i]) < 0)
                 {
                     tempArray[k] = aux[j++];
                 }

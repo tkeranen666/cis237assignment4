@@ -44,10 +44,10 @@ namespace cis237assignment4
                         break;
 
                     case 3:
-                        sortCollection.BucketSort();
+                        droidCollection.BucketSort();
                         break;
                     case 4:
-                        sortCollection.MergeSort();
+                        droidCollection.MergeSort();
                         break;
                 }
                 //Re-display the menu, and re-prompt for the choice
