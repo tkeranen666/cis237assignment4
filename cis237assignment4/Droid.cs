@@ -67,6 +67,7 @@ namespace cis237assignment4
                     "Color: " + this.color + Environment.NewLine;
         }
 
+        // CompareTo method required for Merge Sort
         public int CompareTo(object obj)
         {
             if (obj == null) return 1;
@@ -77,12 +78,5 @@ namespace cis237assignment4
             else
                 throw new ArgumentException("Object is not the Total Cost");
         }
-       // private IComparable[] aux;
-       // public int CompareTo(Object obj)
-       // {
-           // if (obj )
-           // {
-           // }
-      //  }
     }
 }

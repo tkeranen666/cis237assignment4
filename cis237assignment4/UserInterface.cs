@@ -24,6 +24,7 @@ namespace cis237assignment4
             Console.WriteLine("Welcome to the Droid Inventory System");
             Console.WriteLine();
 
+            // Add a few droids to the list so it can be displayed or sorted immediately
             this.droidCollection.Add("Vanadium", "Protocal", "Gold", 500);
             this.droidCollection.Add("Vanadium", "Utility", "Bronze", false, true, false);
             this.droidCollection.Add("Carbonite", "Janitor", "Silver", false, false, true, false, true);
@@ -345,29 +346,5 @@ namespace cis237assignment4
                     break;
             }
         }
-
-        //public void BucketSort()
-        //{
-        //    GenericStack<string> myGenericStack = new GenericStack<string>();
-
-        //    int i = 0;
-
-        //    while (droidCollection[i] != null)
-        //    {
-
-        //    }
-
-
-        //    for (GenericNode<string> x = myGenericStack.Head; x != null; x = x.Next)
-        //    {
-        //        Console.WriteLine(x.Data);
-        //    }
-
-        //}
-
-        //public void MergeSort()
-        //{
-
-        //}
     }
 }

@@ -66,11 +66,11 @@ The code in the Algorithms book for Stack, Queue, and Merge Sort are in Java. It
 Be sure to think about what the time complexity for the bucket sort will be. Think about how it compares to that of a normal sort such as Merge or Bubble. Also consider the space complexity compared to that of merge or bubble sort. You may see questions related to this on the next exam.
 
 ## Outside Resources Used
-
+MSDN (If that counts.)
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
-Crashes at second iteration of Pop method.
+Program still crashes at third(not second) iteration of Pop method.
 
 
 ## Assignment 3 Description for reference

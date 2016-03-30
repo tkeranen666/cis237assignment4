@@ -8,30 +8,42 @@ namespace cis237assignment4
 {
     class MergeSort
     {
-        private static IComparable[] aux;
+        private static IComparable[] aux; // Create a new array with IComparable
 
-        public void sort(IComparable[] tempArray, int lengthOfCollection)
+        // Method recieves variables passed in by DroidCollection
+        public void Sort(IComparable[] tempArray, int lengthOfCollection)
         {
-            aux = new IComparable[tempArray.Length];
+            aux = new IComparable[tempArray.Length]; // Load aux with values from tempArray
+
+            // If tempArray is not empty call next sort method
             if (tempArray != null)
             {
-                sort(tempArray, 0, lengthOfCollection);
+                Sort(tempArray, 0, lengthOfCollection);
             }
             else
             {
-                Console.WriteLine("ERROR!");
+                Console.WriteLine("ERROR!"); // If array is empty display an error
             }
         }
 
-        private static void sort(IComparable[] tempArray, int lo, int hi)
+        // Method sorts through and separates values from array
+        private static void Sort(IComparable[] tempArray, int lo, int hi)
         {
-            if (hi <= lo) return;
+            if (hi <= lo)
+            {
+                return;
+            }
+
             int mid = lo + (hi - lo) / 2;
-            sort(tempArray, lo, mid);
-            sort(tempArray, mid + 1, hi);
+
+            Sort(tempArray, lo, mid);
+
+            Sort(tempArray, mid + 1, hi);
+
             merge(tempArray, lo, mid, hi);
         }
 
+        // Method merges sorted values again and returns the sorted array to the Droid Collection
         public static void merge(IComparable[] tempArray, int lo, int mid, int hi)
         {
             int i = lo;

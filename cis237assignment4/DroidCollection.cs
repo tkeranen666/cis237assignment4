@@ -17,27 +17,13 @@ namespace cis237assignment4
 
         MergeSort sortArray = new MergeSort();
 
-        //--------------------------------------------------------
-       // public void AddInitialDroids() // Add items to array for testing
-       // {
-          //  this.Add("Carbonite", "C3PO", "Gold", 500);
-            //droidCollection[0] = new AstromechDroid("Thermasteel", "R2 Unit", "Blue", true, true, true, true, 250);
-            //droidCollection[1] = new ProtocolDroid("Plasteel", "Custom-built Unit", "Gold", 6000000);
-            //droidCollection[2] = new AstromechDroid("Thermasteel", "R2 Unit", "Green", true, true, true, false, 50);
-            //droidCollection[3] = new ProtocolDroid("Plastoid Alloy", "HK Unit", "Rusty Orange", 400000);
-            //droidCollection[4] = new AstromechDroid("Plasteel", "T3 Unit", "Silver", false, true, true, false, 50);
-            //droidCollection[5] = new JanitorDroid("Plastoid Alloy", "V33 Unit", "Yellow", true, false, false, true, true);
-      //  }
-        //------------------------------------------------------------
-
-        //Constructor that takes in the size of the collection.
-        //It sets the size of the internal array that will be used.
-        //It also sets the length of the collection to zero since nothing is added yet.
-
         public DroidCollection() // Default constructor to allow the DroidCollection class to be called for sorting.
         {
         }
 
+        //Constructor that takes in the size of the collection.
+        //It sets the size of the internal array that will be used.
+        //It also sets the length of the collection to zero since nothing is added yet.
         public DroidCollection(int sizeOfCollection)
         {
             //Make new array for the collection
@@ -145,19 +131,25 @@ namespace cis237assignment4
             return returnString;
         }
 
+        // Method to sort by droid type
         public void BucketSort()
         {
+            // Create a new stack array to hold each type of droid
             GenericStack<AstromechDroid> myGenericAstromechStack = new GenericStack<AstromechDroid>();
             GenericStack<JanitorDroid> myGenericJanitorStack = new GenericStack<JanitorDroid>();
             GenericStack<UtilityDroid> myGenericUtilityStack = new GenericStack<UtilityDroid>();
             GenericStack<ProtocolDroid> myGenericProtocolStack = new GenericStack<ProtocolDroid>();
 
+            // Create a queue to reform the sorted list
             GenericQueue<Droid> myGenericQueue = new GenericQueue<Droid>();
 
+            // Loop through each droid in the array
             foreach (IDroid droid in droidCollection)
             {
+                // If there are no more droids, end the loop
                 if (droid != null)
                 {
+                    // Place each droid in the proper stack
                     if (droid is AstromechDroid)
                     {
                         myGenericAstromechStack.Push((AstromechDroid)droid);
@@ -181,17 +173,16 @@ namespace cis237assignment4
                 }
             }
 
+            // Create a new temporary variable to store each droid,
+            // then 'pop' the droid into the variable
             AstromechDroid currentAstromechDroid = myGenericAstromechStack.Pop();
-            while (currentAstromechDroid != null)
+            while (currentAstromechDroid != null) // Loop until there are no more droids in the stack
             {
+                // Add each droid to the queue as the program loops through the stack
                 myGenericQueue.Enqueue(currentAstromechDroid);
+                // Pop the next droid into the currentAstromechDroid variable
                 currentAstromechDroid = myGenericAstromechStack.Pop();
             }
-
-            //for (GenericNode<AstromechDroid> x = myGenericAstromechStack.Head; x != null; x = x.Next)
-            //{
-            //    myGenericAstromechStack.Pop();
-            //}
 
             JanitorDroid currentJanitorDroid = myGenericJanitorStack.Pop();
             while (currentJanitorDroid != null)
@@ -214,59 +205,15 @@ namespace cis237assignment4
                 currentProtocolDroid = myGenericProtocolStack.Pop();
             }
 
+            // Create an index to keep track of the number of droids
             int index = 0;
             IDroid currentDroid = myGenericQueue.Dequeue();
             while (currentDroid != null)
             {
-                droidCollection[index] = myGenericQueue.Dequeue();
+                droidCollection[index] = currentDroid;
+                currentDroid = myGenericQueue.Dequeue();
+                index++;
             }
-            
-            //int index = 0;
-            //while (myGenericAstromechStack[index] != null)
-            //{
-
-            //}
-
-            //for (GenericNode<IDroid> x = myGenericAstromechStack.Head; x != null; x = x.Next)
-            //{
-            //    myGenericAstromechStack.Pop();
-            //    myGenericQueue.Enqueue(x);
-            //    Console.WriteLine(x.Data);
-            //}
-            //for (GenericNode<IDroid> x = myGenericJanitorStack.Head; x != null; x = x.Next)
-            //{
-            //    myGenericJanitorStack.Pop();
-            //    myGenericQueue.Enqueue(x);
-            //    Console.WriteLine(x.Data);
-            //}
-            //for (GenericNode<IDroid> x = myGenericUtilityStack.Head; x != null; x = x.Next)
-            //{
-            //    myGenericUtilityStack.Pop();
-            //    myGenericQueue.Enqueue(x);
-            //    Console.WriteLine(x.Data);
-            //}
-            //for (GenericNode<IDroid> x = myGenericProtocolStack.Head; x != null; x = x.Next)
-            //{
-            //    myGenericProtocolStack.Pop();
-            //    myGenericQueue.Enqueue(x);
-            //    Console.WriteLine(x.Data);
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine("***************************************");
-            //Console.WriteLine();
-            ////AstromechDroid currentAstromechDroid = myGenericAstromechStack.Pop();
-            ////droidCollection = null;
-
-
-            //int index = 0;
-
-            //for (GenericNode<IDroid> x = myGenericQueue.Head.Data; x != null; x = x.Next)
-            //{
-            //    Console.WriteLine(x.Data);
-            //    //x.Data = myGenericQueue.Dequeue();
-            //    droidCollection[index] = x.Data;
-            //    index++;
-            //}
         }
 
         public void MergeSort()
@@ -275,6 +222,7 @@ namespace cis237assignment4
             {
                 if (droid != null)
                 {
+                    // Get total cost of each droid for the merge sort
                     droid.CalculateTotalCost();
                 }
                 else
@@ -282,7 +230,9 @@ namespace cis237assignment4
                     break;
                 }
             }
-            sortArray.sort(droidCollection, lengthOfCollection - 1);
+
+            // Call the MergeSort class and pass in the array and the array's length
+            sortArray.Sort(droidCollection, lengthOfCollection - 1);
         }
     }
 }
