@@ -28,13 +28,17 @@ namespace cis237assignment4
 
             // Add a few droids to the list so it can be displayed or sorted immediately
             this.droidCollection.Add("Vanadium", "Protocal", "Gold", 500);
+            this.droidCollection.Add("Quadranium", "Astromech", "Bronze", true, true, true, false, 200);
             this.droidCollection.Add("Vanadium", "Utility", "Bronze", false, true, false);
+            this.droidCollection.Add("Quadranium", "Protocal", "Bronze", 300);
             this.droidCollection.Add("Carbonite", "Janitor", "Silver", false, false, true, false, true);
-            this.droidCollection.Add("Quadranium", "Astromech", "Silver", true, true, true, true, 15);
+            this.droidCollection.Add("Quadranium", "Protocal", "Gold", 40);
+            this.droidCollection.Add("Quadranium", "Astromech", "Silver", true, false, false, true, 15);
             this.droidCollection.Add("Carbonite", "Astromech", "Gold", true, false, true, false, 15);
             this.droidCollection.Add("Vanadium", "Utility", "Silver", true, true, false);
             this.droidCollection.Add("Quadranium", "Janitor", "Silver", true, false, true, true, false);
-            this.droidCollection.Add("Quadranium", "Protocal", "Bronze", 500);
+            this.droidCollection.Add("Quadranium", "Protocal", "Silver", 150);
+            this.droidCollection.Add("Quadranium", "Astromech", "Gold", true, true, true, true, 35);
         }
 
         //Method to display the main menu

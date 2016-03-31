@@ -10,12 +10,6 @@ namespace cis237assignment4
 {
     class GenericQueue<T>
     {
-        public GenericNode<T> Current
-        {
-            get;
-            set;
-        }
-
         public GenericNode<T> Head
         {
             get;
@@ -32,7 +26,11 @@ namespace cis237assignment4
         {
             Head = null;
             Tail = null;
-            Current = null;
+        }
+
+        public bool isEmpty
+        {
+            get { return Head == null; }
         }
 
         // Method for adding moving each droid to the queue
@@ -52,17 +50,21 @@ namespace cis237assignment4
         // Method for removing each droid from the queue
         public T Dequeue()
         {
-            if (Head == null)
+            if (!isEmpty)
             {
-                Console.WriteLine("ERROR!");
+                if (Head == null)
+                {
+                    Console.WriteLine("ERROR!");
+                }
+                GenericNode<T> returnNode = Head;
+                Head = Head.Next;
+                if (Head == null)
+                {
+                    Tail = null;
+                }
+                return returnNode.Data;
             }
-            GenericNode<T> returnNode = Head;
-            Head = Head.Next;
-            if (Head == null)
-            {
-                Tail = null;
-            }
-            return returnNode.Data;
+            return default(T);
         }
     }
 }

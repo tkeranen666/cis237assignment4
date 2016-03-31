@@ -10,11 +10,6 @@ namespace cis237assignment4
 {
     class GenericStack<T>
     {
-        public GenericNode<T> Current
-        {
-            get;
-            set;
-        }
 
         public GenericNode<T> Head
         {
@@ -22,17 +17,14 @@ namespace cis237assignment4
             set;
         }
 
-        public GenericNode<T> Tail
+        public bool isEmpty
         {
-            get;
-            set;
+            get { return Head == null; }
         }
 
         public GenericStack()
         {
             Head = null;
-            Tail = null;
-            Current = null;
         }
 
         // Method to push each droid into its stack
@@ -47,13 +39,15 @@ namespace cis237assignment4
         // Method for popping each droid off its stack into a variable
         public T Pop()
         {
-            GenericNode<T> returnNode = Head;
-            Head = Head.Next;
-            if (Head == null)
+            if (!isEmpty)
             {
-                Tail = null;
+                GenericNode<T> returnNode = Head;
+
+                Head = Head.Next;
+                return returnNode.Data;
             }
-            return returnNode.Data;
+
+            return default(T);
         }
     }
 }
